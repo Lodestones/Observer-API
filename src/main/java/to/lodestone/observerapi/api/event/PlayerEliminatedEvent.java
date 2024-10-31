@@ -1,4 +1,4 @@
-package to.lodestone.bookshelfapi.api.event;
+package to.lodestone.observerapi.api.event;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.LivingEntity;
@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.jetbrains.annotations.Nullable;
+import to.lodestone.bookshelfapi.api.event.BaseEvent;
 import to.lodestone.bookshelfapi.api.util.MiniMessageUtil;
 
 public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {

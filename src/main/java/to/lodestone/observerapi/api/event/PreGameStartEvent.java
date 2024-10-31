@@ -1,7 +1,8 @@
-package to.lodestone.bookshelfapi.api.event;
+package to.lodestone.observerapi.api.event;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
+import to.lodestone.bookshelfapi.api.event.BaseEvent;
 
 public class PreGameStartEvent extends BaseEvent implements Cancellable {
 

@@ -1,4 +1,4 @@
-package to.lodestone.bookshelfapi;
+package to.lodestone.observerapi;
 
 public class ObserverAPI {
 

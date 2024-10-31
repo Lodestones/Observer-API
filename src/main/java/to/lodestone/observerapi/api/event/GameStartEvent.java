@@ -1,14 +1,15 @@
-package to.lodestone.bookshelfapi.api.event;
+package to.lodestone.observerapi.api.event;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
+import to.lodestone.bookshelfapi.api.event.BaseEvent;
 
-public class StartGameEvent extends BaseEvent implements Cancellable {
+public class GameStartEvent extends BaseEvent implements Cancellable {
 
     private boolean isCancelled;
     private final Player executor;
 
-    public StartGameEvent(Player executor) {
+    public GameStartEvent(Player executor) {
         this.executor = executor;
     }
 
