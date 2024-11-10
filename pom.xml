@@ -6,7 +6,7 @@
 
     <groupId>to.lodestone</groupId>
     <artifactId>Observer-API</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Observer-API</name>
@@ -78,9 +78,12 @@
         </dependency>
         <dependency>
             <groupId>to.lodestone</groupId>
-            <artifactId>Bookshelf-API</artifactId>
-            <version>1.0.7</version>
-            <scope>provided</scope>
+            <artifactId>bookshelfapi</artifactId>
+            <version>1.0.9</version>
+            <scope>system</scope>
+            <systemPath>
+                ${basedir}/libs/Bookshelf-API-1.0.9.jar
+            </systemPath>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
