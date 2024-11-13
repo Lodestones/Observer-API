@@ -78,12 +78,9 @@
         </dependency>
         <dependency>
             <groupId>to.lodestone</groupId>
-            <artifactId>bookshelfapi</artifactId>
+            <artifactId>Bookshelf-API</artifactId>
             <version>1.0.9</version>
-            <scope>system</scope>
-            <systemPath>
-                ${basedir}/libs/Bookshelf-API-1.0.9.jar
-            </systemPath>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>

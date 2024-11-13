@@ -8,18 +8,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-public record CraftingPedestal(Location position,
+public record CraftingPedestal(String id,
+                               Location position,
                                List<ItemStack> ingredients,
                                ItemStack result,
                                int maxUses,
                                float itemHeight,
                                HashMap<UUID, Integer> uses) {
-    public CraftingPedestal(Location position, List<ItemStack> ingredients, ItemStack result, int maxUses) {
-        this(position, ingredients, result, maxUses, 1.0f, new HashMap<>());
+    public CraftingPedestal(String id, Location position, List<ItemStack> ingredients, ItemStack result, int maxUses) {
+        this(id, position, ingredients, result, maxUses, 1.0f, new HashMap<>());
     }
 
-    public CraftingPedestal(Location position, List<ItemStack> ingredients, ItemStack result) {
-        this(position, ingredients, result, 1, 1.0f, new HashMap<>());
+    public CraftingPedestal(String id, Location position, List<ItemStack> ingredients, ItemStack result) {
+        this(id, position, ingredients, result, 1, 1.0f, new HashMap<>());
     }
 
     public boolean isAvailableFor(Player player) {
