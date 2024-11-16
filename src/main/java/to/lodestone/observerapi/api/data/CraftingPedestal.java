@@ -25,7 +25,7 @@ public record CraftingPedestal(String id,
 
     public boolean isAvailableFor(Player player) {
         var used = uses.get(player.getUniqueId());
-        if (used==null) return true;
+        if (used == null) return true;
         return used < maxUses;
     }
 }
