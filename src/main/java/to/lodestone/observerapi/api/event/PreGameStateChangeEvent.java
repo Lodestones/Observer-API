@@ -18,7 +18,7 @@ public class PreGameStateChangeEvent extends BaseEvent implements Cancellable {
     private final Player source;
     public PreGameStateChangeEvent(GameState oldState, GameState newState, @Nullable Player source, int tickDelay) {
         this.oldState = oldState;
-        this.tickDelay = 0;
+        this.tickDelay = tickDelay;
         this.newState = newState;
         this.source = source;
         this.isCancelled = false;

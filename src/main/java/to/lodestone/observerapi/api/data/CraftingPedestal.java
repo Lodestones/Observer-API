@@ -14,13 +14,14 @@ public record CraftingPedestal(String id,
                                ItemStack result,
                                int maxUses,
                                float itemHeight,
+                               PedestalType pedestalType,
                                HashMap<UUID, Integer> uses) {
-    public CraftingPedestal(String id, Location position, List<ItemStack> ingredients, ItemStack result, int maxUses) {
-        this(id, position, ingredients, result, maxUses, 1.0f, new HashMap<>());
+    public CraftingPedestal(String id, Location position, List<ItemStack> ingredients, ItemStack result, int maxUses, PedestalType pedestalType) {
+        this(id, position, ingredients, result, maxUses, 1.0f, pedestalType, new HashMap<>());
     }
 
-    public CraftingPedestal(String id, Location position, List<ItemStack> ingredients, ItemStack result) {
-        this(id, position, ingredients, result, 1, 1.0f, new HashMap<>());
+    public CraftingPedestal(String id, Location position, List<ItemStack> ingredients, ItemStack result, PedestalType pedestalType) {
+        this(id, position, ingredients, result, 1, 1.0f, pedestalType, new HashMap<>());
     }
 
     public boolean isAvailableFor(Player player) {

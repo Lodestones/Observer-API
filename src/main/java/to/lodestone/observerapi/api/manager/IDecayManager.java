@@ -12,5 +12,7 @@ public interface IDecayManager {
     void unmarkBlockForDecay(World world, int x, int y, int z);
     void unmarkBlockForDecay(Location location);
     void unmarkBlockForDecay(Block block);
+    boolean isMarkedForDecay(World world, int x, int y, int z);
+    boolean isMarkedForDecay(Location location);
 
 }

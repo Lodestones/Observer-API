@@ -19,6 +19,7 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
     private boolean shouldKick;
     private Component kickMessage;
     private final PlayerDeathEvent originalEvent;
+    private boolean hasBeenModified = false;
 
     public PlayerEliminatedEvent(Player player, PlayerDeathEvent originalEvent) {
         this.player = player;
@@ -60,6 +61,14 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
         this.kickMessage = kickMessage;
     }
 
+    public void setHasBeenModified(boolean hasBeenModified) {
+        this.hasBeenModified = hasBeenModified;
+    }
+
+    public boolean hasBeenModified() {
+        return hasBeenModified;
+    }
+
     public Component getDeathMessage() {
         return deathMessage;
     }
@@ -70,6 +79,7 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
 
     public void setDeathMessage(Component deathMessage) {
         this.deathMessage = deathMessage;
+        this.hasBeenModified = true;
     }
 
     public @Nullable LivingEntity getKiller() {
@@ -82,6 +92,7 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
 
     public void setKickMessage(Component kickMessage) {
         this.kickMessage = kickMessage;
+        this.hasBeenModified = true;
     }
 
     public void setShouldKick(boolean shouldKick) {

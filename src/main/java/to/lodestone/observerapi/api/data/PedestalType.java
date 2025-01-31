@@ -1,4 +1,4 @@
-package to.lodestone.observerapi.api.data.pedestal;
+package to.lodestone.observerapi.api.data;
 
 public enum PedestalType {
     SINGLE_USE,
