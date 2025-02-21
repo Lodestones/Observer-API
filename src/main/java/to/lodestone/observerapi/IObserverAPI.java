@@ -15,7 +15,7 @@ public interface IObserverAPI {
     ITranslationManager getTranslationManager();
     ICapsuleManager getCapsuleManager();
     IGameManager.ILateJoinManager getLateJoinManager();
-    ILifestealManager getEliminatedManager();
+    ILifestealManager getLifestealManager();
     IRespawnManager getRespawnManager();
 
     void setGameState(Player player, GameState gameState);

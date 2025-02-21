@@ -2,7 +2,6 @@ package to.lodestone.observerapi.api.manager;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
 import to.lodestone.observerapi.api.data.GameState;
 
 import java.util.Map;
@@ -22,6 +21,10 @@ public interface IGameManager {
         void setAutoKickBypass(String autoKickBypass);
         boolean shouldLightningOnKill();
         void setLightningOnKill(boolean lightningOnKill);
+        void setGamemodeOnDeath(GameMode gamemode);
+        GameMode getGamemodeOnDeath();
+        void setAutoRespawn(boolean autoRespawn);
+        boolean isAutoRespawn();
     }
 
     interface IGameConfig {

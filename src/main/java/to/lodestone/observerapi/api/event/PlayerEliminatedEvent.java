@@ -5,9 +5,14 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import to.lodestone.bookshelfapi.api.event.BaseEvent;
 import to.lodestone.bookshelfapi.api.util.MiniMessageUtil;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
 
@@ -16,10 +21,9 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
     private final LivingEntity killer;
     private boolean isCancelled;
     private Component deathMessage;
-    private boolean shouldKick;
-    private Component kickMessage;
     private final PlayerDeathEvent originalEvent;
     private boolean hasBeenModified = false;
+    private List<ItemStack> drops;
 
     public PlayerEliminatedEvent(Player player, PlayerDeathEvent originalEvent) {
         this.player = player;
@@ -27,8 +31,8 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
         this.killer = null;
         this.isCancelled = false;
         this.deathMessage = MiniMessageUtil.deserialize(String.format(player.getName() + " was eliminated."));
-        this.shouldKick = false;
-        this.kickMessage = Component.empty();
+        this.drops = new ArrayList<>();
+        this.drops.addAll(Arrays.stream(player.getInventory().getContents()).toList());
     }
 
     public PlayerEliminatedEvent(Player player, @Nullable LivingEntity killer, PlayerDeathEvent originalEvent) {
@@ -39,8 +43,8 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
             this.deathMessage = MiniMessageUtil.deserialize(String.format(player.getName() + " was eliminated by " + killer.getName() + "."));
         else
             this.deathMessage = MiniMessageUtil.deserialize(String.format(player.getName() + " was eliminated."));
-        this.shouldKick = false;
-        this.kickMessage = Component.empty();
+        this.drops = new ArrayList<>();
+        this.drops.addAll(Arrays.stream(player.getInventory().getContents()).toList());
     }
 
     public PlayerEliminatedEvent(Player player, @Nullable LivingEntity killer, Component deathMessage, PlayerDeathEvent originalEvent) {
@@ -48,17 +52,8 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
         this.originalEvent = originalEvent;
         this.killer = killer;
         this.deathMessage = deathMessage;
-        this.shouldKick = false;
-        this.kickMessage = Component.empty();
-    }
-
-    public PlayerEliminatedEvent(Player player, @Nullable LivingEntity killer, Component deathMessage, boolean shouldKick, Component kickMessage, PlayerDeathEvent originalEvent) {
-        this.player = player;
-        this.originalEvent = originalEvent;
-        this.killer = killer;
-        this.deathMessage = deathMessage;
-        this.shouldKick = shouldKick;
-        this.kickMessage = kickMessage;
+        this.drops = new ArrayList<>();
+        this.drops.addAll(Arrays.stream(player.getInventory().getContents()).toList());
     }
 
     public void setHasBeenModified(boolean hasBeenModified) {
@@ -77,6 +72,14 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
         return originalEvent;
     }
 
+    public List<ItemStack> getDrops() {
+        return drops;
+    }
+
+    public void setDrops(List<ItemStack> drops) {
+        this.drops = drops;
+    }
+
     public void setDeathMessage(Component deathMessage) {
         this.deathMessage = deathMessage;
         this.hasBeenModified = true;
@@ -84,23 +87,6 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
 
     public @Nullable LivingEntity getKiller() {
         return killer;
-    }
-
-    public Component getKickMessage() {
-        return kickMessage;
-    }
-
-    public void setKickMessage(Component kickMessage) {
-        this.kickMessage = kickMessage;
-        this.hasBeenModified = true;
-    }
-
-    public void setShouldKick(boolean shouldKick) {
-        this.shouldKick = shouldKick;
-    }
-
-    public boolean shouldKick() {
-        return shouldKick;
     }
 
     public Player getPlayer() {
