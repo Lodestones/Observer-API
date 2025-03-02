@@ -1,0 +1,25 @@
+package to.lodestone.observerapi.api.data.pedestals;
+
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import to.lodestone.observerapi.api.data.PedestalType;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
+
+public record PedestalConfig(String id,
+                             Location position,
+                             List<ItemStack> ingredients,
+                             ItemStack result,
+                             int maxUses,
+                             float itemHeight,
+                             PedestalType pedestalType,
+                             HashMap<UUID, Integer> uses) {
+    public boolean isAvailableFor(Player player) {
+        var used = uses.get(player.getUniqueId());
+        if (used == null) return true;
+        return used < maxUses;
+    }
+}
