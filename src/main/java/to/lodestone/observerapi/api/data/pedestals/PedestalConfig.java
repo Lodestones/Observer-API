@@ -22,4 +22,7 @@ public record PedestalConfig(String id,
         if (used == null) return true;
         return used < maxUses;
     }
+    public PedestalConfig relocate(Location location) {
+        return new PedestalConfig(id, location, ingredients, result, maxUses, itemHeight, pedestalType, uses);
+    }
 }

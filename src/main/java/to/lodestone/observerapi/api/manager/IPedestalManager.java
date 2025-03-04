@@ -14,9 +14,9 @@ public interface IPedestalManager {
 
     void hidePedestalFromPlayer(String id, UUID player);
 
-    void add(String id, PedestalConfig recipe);
+    void register(String id, PedestalConfig recipe);
 
-    boolean remove(String id);
+    boolean unregister(String id);
 
     void reload();
 
