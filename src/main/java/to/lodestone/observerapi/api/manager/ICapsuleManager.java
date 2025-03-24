@@ -19,6 +19,9 @@ public interface ICapsuleManager {
     void removePlayerFromCapsule(Player player);
     void sendPlayersToCapsules(@Nullable Player executor);
     void release();
-
+    void save();
+    void swapCapsules(Player player1, Player player2);
+    void reload();
+    void sendPlayerToCapsule(Player player, Capsule capsule);
 
 }
