@@ -1,4 +1,4 @@
-package to.lodestone.observerapi.api.error;
+package to.lodestone.observerapi.api.exception;
 
 public class InsufficientTeamsException extends Exception {
     public InsufficientTeamsException() {

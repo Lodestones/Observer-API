@@ -1,4 +1,4 @@
-package to.lodestone.observerapi.api.error;
+package to.lodestone.observerapi.api.exception;
 
 public class AlreadyInPreGameModeException extends Exception {
     public AlreadyInPreGameModeException() {

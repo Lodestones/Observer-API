@@ -1,4 +1,4 @@
-package to.lodestone.observerapi.api.error;
+package to.lodestone.observerapi.api.exception;
 
 public class NotInLobbyModeException extends Exception {
     public NotInLobbyModeException() {
