@@ -6,7 +6,7 @@
 
     <groupId>to.lodestone</groupId>
     <artifactId>Observer-API</artifactId>
-    <version>1.0.42</version>
+    <version>1.0.43</version>
     <packaging>jar</packaging>
 
     <name>Observer-API</name>
