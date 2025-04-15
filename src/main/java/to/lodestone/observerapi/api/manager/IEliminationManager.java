@@ -15,13 +15,13 @@ public interface IEliminationManager {
 
     void setKickMessage(String kickMessage);
 
-    boolean isAutoKickEnabled();
+    boolean isAutoBanEnabled();
 
-    void setAutoKickEnabled(boolean autoKickEnabled);
+    void setAutoBanEnabled(boolean autoKickEnabled);
 
-    String getAutoKickBypass();
+    String getAutoBanBypass();
 
-    void setAutoKickBypass(String autoKickBypass);
+    void setAutoBanBypass(String autoKickBypass);
 
     boolean shouldLightningOnKill();
 
