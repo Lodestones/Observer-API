@@ -46,6 +46,8 @@ public interface IMechanicsManager {
 
     boolean isEndAllowed();
 
+    boolean shouldGrantAllRecipes();
+
     void setSleepingAllowed(boolean sleepingAllowed);
 
     void setEnchantItems(boolean enchantItems);
@@ -79,5 +81,7 @@ public interface IMechanicsManager {
     void setNetherAllowed(boolean netherAllowed);
 
     void setEndAllowed(boolean endAllowed);
+
+    void setShouldGrantAllRecipes(boolean shouldGrantAllRecipes);
 
 }
