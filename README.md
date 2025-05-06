@@ -1,7 +1,10 @@
 # Bookshelf API
-Bookshelf API allows you to hook into the Bookshelf Plugin to access quality of life managers that you can integrate into your plugin.<br>
+
+Bookshelf API allows you to hook into the Bookshelf Plugin to access quality of life managers that you can integrate
+into your plugin.<br>
 
 The Bookshelf API also provides utility classes that you can use such as:
+
 - [Creating Custom Menus](https://github.com/Lodestones/Bookshelf/tree/master/docs/menu_builder.md)
 - [Utility Classes](https://github.com/Lodestones/Bookshelf/tree/master/src/main/java/to/lodestone/bookshelfapi/api/util)
   - [ArrayUtil](https://github.com/Lodestones/Bookshelf/blob/master/src/main/java/to/lodestone/bookshelfapi/api/util/ArrayUtil.java)
@@ -27,6 +30,7 @@ The Bookshelf API also provides utility classes that you can use such as:
 - [Another CommandAPI Builder](https://github.com/Lodestones/Bookshelf/blob/master/src/main/java/to/lodestone/bookshelfapi/api/command/Command.java)
 
 ## Table of Contents
+
 1. [Installing the Bookshelf API](#installation)
 2. [What's in the Bookshelf API](#api)
 3. [Using the Bookshelf API](#usage)
@@ -37,6 +41,7 @@ The Bookshelf API also provides utility classes that you can use such as:
 ---
 
 ## Donating
+
 Bookshelf among other various plugins I have worked on are free to use!
 Please consider donating to my ko-fi! It helps fund other projects that I am passionate about.
 
@@ -47,9 +52,13 @@ https://ko-fi.com/apollo30
 ---
 
 # Installation
+
 Below shows you how to install Bookshelf API into your project.
+
 ## Gradle
+
 Add it in your root build.gradle at the end of repositories:
+
 ```java
     dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -59,14 +68,19 @@ Add it in your root build.gradle at the end of repositories:
         }
     }
 ```
+
 Add the dependency
+
 ```java
     dependencies {
         implementation 'com.github.Lodestones:Bookshelf:beta-v1.0.0'
     }
 ```
+
 ## Maven
+
 Add the JitPack repository to your build file
+
 ```xml
     <repositories>
         <repository>
@@ -75,7 +89,9 @@ Add the JitPack repository to your build file
         </repository>
     </repositories>
 ```
+
 Add the dependency
+
 ```xml
     <dependency>
         <groupId>com.github.Lodestones</groupId>
@@ -85,14 +101,17 @@ Add the dependency
 ```
 
 # Documentation
+
 ## API
+
 TODO - Documentation Description
 
 ## Usage
+
 Hooking into the Bookshelf API.
 
 ```java
-import to.lodestone.observerapi.IObserverAPI;
+import gg.lode.observerapi.IObserverAPI;
 
 public class MainPlugin extends JavaPlugin {
     private BookshelfHook bookshelfHook; // Declare Bookshelf Hook Variable.
@@ -102,18 +121,23 @@ public class MainPlugin extends JavaPlugin {
         bookshelfHook = new BookshelfHook(this); // Hook into the Bookshelf API.       
     }
 
-    public IObserverAPI bookshelf() { // use this method to access the Bookshelf API.
-        return bookshelfHook.api(); // Retrieve the Bookshelf API from the Hook.       
-    }
+  public IObserverAPI bookshelf() { // use this method to access the Bookshelf API.
+    return bookshelfHook.api(); // Retrieve the Bookshelf API from the Hook.       
+  }
 }
 ```
 
 ---
 
 # Contributing
-See something Bookshelf doesn't support, a bug or something that may be useful? We welcome contributions to improve the Bookshelf API. Open an issue [here](https://github.com/Lodestones/Bookshelf/issues).
+
+See something Bookshelf doesn't support, a bug or something that may be useful? We welcome contributions to improve the
+Bookshelf API. Open an issue [here](https://github.com/Lodestones/Bookshelf/issues).
 
 ---
 
 # License
-Bookshelf is protected by [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt). Please view the license [here](https://github.com/Lodestones/Bookshelf/blob/master/LICENSE).
+
+Bookshelf is protected
+by [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt).
+Please view the license [here](https://github.com/Lodestones/Bookshelf/blob/master/LICENSE).
