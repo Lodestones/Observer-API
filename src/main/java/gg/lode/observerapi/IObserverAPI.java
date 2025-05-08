@@ -48,7 +48,7 @@ public interface IObserverAPI {
 
     double getBaseHealth();
 
-    void setBaseHealth();
+    void setBaseHealth(double baseHealth);
 
     World getLobbyWorld();
 
