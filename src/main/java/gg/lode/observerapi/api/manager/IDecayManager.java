@@ -12,6 +12,12 @@ public interface IDecayManager {
 
     void markBlockForDecay(Block block);
 
+    void markBlockForDecay(Block block, int decayTime);
+
+    void markBlockForDecay(World world, int x, int y, int z, int decayTime);
+
+    void markBlockForDecay(Location location, int decayTime);
+
     void unmarkBlockForDecay(World world, int x, int y, int z);
 
     void unmarkBlockForDecay(Location location);
