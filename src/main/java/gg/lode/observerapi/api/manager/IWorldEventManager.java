@@ -15,11 +15,13 @@ public interface IWorldEventManager {
 
     void updateWorldEvent(WorldEvent event);
 
-    void setCurrentWorldEvent(WorldEvent event);
+    void activateWorldEvent(String eventId);
 
-    boolean hasCurrentWorldEvent();
+    void deactivateWorldEvent(String eventId);
 
-    boolean isWorldEventActive(String id);
+    boolean isWorldEventActive(String eventId);
 
-    WorldEvent getCurrentWorldEvent();
+    boolean hasActiveWorldEvent();
+
+    List<String> getActiveWorldEvents();
 } 
