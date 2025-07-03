@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 public interface IRespawnManager {
 
-    void createRespawnData(Player player);
+    RespawnData createRespawnData(Player player);
 
     void respawnPlayer(Player player, RespawnData respawnData);
 
