@@ -23,6 +23,15 @@ public record PedestalConfig(String id,
         return used < maxUses;
     }
 
+    public static PedestalConfig of(String id,
+                                    Location position,
+                                    List<ItemStack> ingredients,
+                                    ItemStack result,
+                                    int maxUses,
+                                    PedestalType pedestalType) {
+        return new PedestalConfig(id, position, ingredients, result, maxUses, 1.0f, pedestalType, new HashMap<>());
+    }
+
     public PedestalConfig relocate(Location location) {
         return new PedestalConfig(id, location, ingredients, result, maxUses, itemHeight, pedestalType, uses);
     }
