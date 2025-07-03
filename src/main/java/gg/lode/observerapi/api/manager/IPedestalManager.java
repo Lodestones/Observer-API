@@ -21,4 +21,6 @@ public interface IPedestalManager {
     void reload();
 
     void save();
+
+    void clear();
 }
