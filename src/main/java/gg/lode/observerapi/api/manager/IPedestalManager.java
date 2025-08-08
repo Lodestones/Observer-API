@@ -1,12 +1,12 @@
 package gg.lode.observerapi.api.manager;
 
-import gg.lode.observerapi.api.data.pedestals.PedestalConfig;
+import gg.lode.observerapi.api.data.pedestals.PedestalData;
 
 import java.util.Map;
 import java.util.UUID;
 
 public interface IPedestalManager {
-    Map<String, PedestalConfig> getPedestals();
+    Map<String, PedestalData> getPedestals();
 
     void setPedestalUses(String id, UUID player, int uses);
 
@@ -14,7 +14,7 @@ public interface IPedestalManager {
 
     void hidePedestalFromPlayer(String id, UUID player);
 
-    void register(String id, PedestalConfig recipe);
+    void register(String id, PedestalData recipe);
 
     boolean unregister(String id);
 
