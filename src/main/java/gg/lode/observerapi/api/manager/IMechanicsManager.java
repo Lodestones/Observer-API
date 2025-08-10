@@ -22,6 +22,8 @@ public interface IMechanicsManager {
 
     double increasedAppleRates();
 
+    double increasedFlintRates();
+
     boolean isSleepingAllowed();
 
     boolean canEnchantItems();
