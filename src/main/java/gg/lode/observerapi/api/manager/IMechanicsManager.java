@@ -62,6 +62,10 @@ public interface IMechanicsManager {
 
     boolean shouldGrantAllRecipes();
 
+    void setIncreasedAppleRates(double appleRates);
+
+    void setIncreasedFlintRates(double flintRates);
+
     void setSleepingAllowed(boolean sleepingAllowed);
 
     void setEnchantItems(boolean enchantItems);
