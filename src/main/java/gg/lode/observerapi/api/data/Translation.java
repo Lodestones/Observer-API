@@ -1,6 +1,6 @@
 package gg.lode.observerapi.api.data;
 
-import gg.lode.bookshelfapi.api.util.MiniMessageUtil;
+import gg.lode.bookshelfapi.api.util.MiniMessageHelper;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -29,10 +29,10 @@ public record Translation(@Nullable String tellraw, @Nullable Title title,
         if (tellraw != null) {
             if (tellraw.startsWith("<center>")) {
                 AtomicReference<String> modifiedTellraw = new AtomicReference<>(tellraw.substring(8));
-                MiniMessageUtil.center(modifiedTellraw.get(), args).forEach(player::sendMessage);
+                MiniMessageHelper.center(modifiedTellraw.get(), args).forEach(player::sendMessage);
             } else {
                 AtomicReference<String> modifiedTellraw = new AtomicReference<>(tellraw);
-                player.sendMessage(MiniMessageUtil.deserialize(modifiedTellraw.get(), args));
+                player.sendMessage(MiniMessageHelper.deserialize(modifiedTellraw.get(), args));
             }
         }
 
