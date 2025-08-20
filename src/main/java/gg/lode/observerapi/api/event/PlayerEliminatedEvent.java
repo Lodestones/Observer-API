@@ -1,7 +1,7 @@
 package gg.lode.observerapi.api.event;
 
 import gg.lode.bookshelfapi.api.event.BaseEvent;
-import gg.lode.bookshelfapi.api.util.MiniMessageUtil;
+import gg.lode.bookshelfapi.api.util.MiniMessageHelper;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -30,7 +30,7 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
         this.originalEvent = originalEvent;
         this.killer = null;
         this.isCancelled = false;
-        this.deathMessage = MiniMessageUtil.deserialize(String.format(player.getName() + " was eliminated."));
+        this.deathMessage = MiniMessageHelper.deserialize(String.format(player.getName() + " was eliminated."));
         this.drops = new ArrayList<>();
         this.drops.addAll(Arrays.stream(player.getInventory().getContents()).toList());
     }
@@ -40,9 +40,9 @@ public class PlayerEliminatedEvent extends BaseEvent implements Cancellable {
         this.player = player;
         this.killer = killer;
         if (killer != null)
-            this.deathMessage = MiniMessageUtil.deserialize(String.format(player.getName() + " was eliminated by " + killer.getName() + "."));
+            this.deathMessage = MiniMessageHelper.deserialize(String.format(player.getName() + " was eliminated by " + killer.getName() + "."));
         else
-            this.deathMessage = MiniMessageUtil.deserialize(String.format(player.getName() + " was eliminated."));
+            this.deathMessage = MiniMessageHelper.deserialize(String.format(player.getName() + " was eliminated."));
         this.drops = new ArrayList<>();
         this.drops.addAll(Arrays.stream(player.getInventory().getContents()).toList());
     }
