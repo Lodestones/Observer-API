@@ -6,14 +6,19 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public record Translation(@Nullable String tellraw, @Nullable Title title,
-                          @Nullable SoundTranslation soundTranslation) {
+                          @Nullable SoundTranslation soundTranslation, List<String> commands) {
 
     public void broadcast(Object... args) {
         for (Player player : Bukkit.getOnlinePlayers()) {
             send(player, args);
+        }
+
+        for (String command : commands) {
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
         }
     }
 
@@ -22,6 +27,10 @@ public record Translation(@Nullable String tellraw, @Nullable Title title,
             if (player != except) {
                 send(player, args);
             }
+        }
+
+        for (String command : commands) {
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
         }
     }
 
