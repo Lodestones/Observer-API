@@ -34,4 +34,8 @@ public interface ILifestealManager {
     void setCanWithdraw(boolean canWithdraw);
 
     boolean canWithdraw();
+
+    void setShouldRemoveHeart(boolean heart);
+
+    boolean shouldRemoveHeart();
 }
