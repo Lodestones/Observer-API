@@ -62,6 +62,10 @@ public interface IMechanicsManager {
 
     boolean shouldGrantAllRecipes();
 
+    boolean shouldAllowBlockTrampling();
+
+    void setShouldAllowBlockTrampling(boolean shouldAllowBlockTrampling);
+
     void setIncreasedAppleRates(double appleRates);
 
     void setIncreasedFlintRates(double flintRates);
