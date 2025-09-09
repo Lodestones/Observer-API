@@ -38,10 +38,10 @@ public record Translation(@Nullable String tellraw, @Nullable Title title,
         if (tellraw != null) {
             if (tellraw.startsWith("<center>")) {
                 AtomicReference<String> modifiedTellraw = new AtomicReference<>(tellraw.substring(8));
-                MiniMessageHelper.center(modifiedTellraw.get(), args).forEach(player::sendMessage);
+                MiniMessageHelper.center(modifiedTellraw.get().replaceAll("%", "%%"), args).forEach(player::sendMessage);
             } else {
                 AtomicReference<String> modifiedTellraw = new AtomicReference<>(tellraw);
-                player.sendMessage(MiniMessageHelper.deserialize(modifiedTellraw.get(), args));
+                player.sendMessage(MiniMessageHelper.deserialize(modifiedTellraw.get().replaceAll("%", "%%"), args));
             }
         }
 
