@@ -23,4 +23,6 @@ public interface IPedestalManager {
     void save();
 
     void clear();
+
+    void clone(String pedestalId, String newPedestalId);
 }
