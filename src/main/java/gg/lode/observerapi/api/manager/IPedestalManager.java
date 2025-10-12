@@ -1,6 +1,7 @@
 package gg.lode.observerapi.api.manager;
 
 import gg.lode.observerapi.api.data.pedestals.PedestalData;
+import org.bukkit.Location;
 
 import java.util.Map;
 import java.util.UUID;
@@ -24,5 +25,7 @@ public interface IPedestalManager {
 
     void clear();
 
-    void clone(String pedestalId, String newPedestalId);
+    PedestalData getPedestal(String pedestalId);
+
+    void clone(String pedestalId, String newPedestalId, Location location);
 }
