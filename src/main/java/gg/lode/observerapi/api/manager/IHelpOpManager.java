@@ -10,4 +10,6 @@ public interface IHelpOpManager {
 
     void setCooldown(long milliseconds);
 
+    void clearHelpOps();
+
 }
