@@ -79,4 +79,6 @@ public interface IPedestalHologram {
          */
         AFTER_INGREDIENTS
     }
+
+    PedestalData getPedestalData();
 }
