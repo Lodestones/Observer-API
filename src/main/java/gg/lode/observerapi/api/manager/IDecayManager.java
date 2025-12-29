@@ -12,6 +12,12 @@ public interface IDecayManager {
 
     void markBlockForDecay(Block block);
 
+    /**
+     * In ticks, decay a blame within a specific time.
+     *
+     * @param block     What block to decay
+     * @param decayTime How long to decy (in ticks)
+     */
     void markBlockForDecay(Block block, int decayTime);
 
     void markBlockForDecay(World world, int x, int y, int z, int decayTime);
