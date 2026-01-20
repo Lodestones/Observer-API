@@ -4,18 +4,29 @@ import gg.lode.bookshelfapi.api.event.BaseEvent;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 public class PlayerWithdrawHeartEvent extends BaseEvent implements Cancellable {
 
     private final Player player;
     private boolean isCancelled;
-    private double amount;
+    private double removeHealthAmount;
+    private ItemStack heartStack;
     private @Nullable Component cancellationReason;
 
-    public PlayerWithdrawHeartEvent(Player player, double amount) {
+    public PlayerWithdrawHeartEvent(Player player, ItemStack heartStack, double removeHealthAmount) {
         this.player = player;
-        this.amount = amount;
+        this.removeHealthAmount = removeHealthAmount;
+        this.heartStack = heartStack;
+    }
+
+    public ItemStack getHeartStack() {
+        return heartStack;
+    }
+
+    public void setHeartStack(ItemStack heartStack) {
+        this.heartStack = heartStack;
     }
 
     @Override
@@ -32,12 +43,12 @@ public class PlayerWithdrawHeartEvent extends BaseEvent implements Cancellable {
         return player;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getRemoveHealthAmount() {
+        return removeHealthAmount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setRemoveHealthAmount(double removeHealthAmount) {
+        this.removeHealthAmount = removeHealthAmount;
     }
 
     public @Nullable Component getCancellationReason() {
