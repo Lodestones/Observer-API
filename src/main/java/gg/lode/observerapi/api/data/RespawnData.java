@@ -5,6 +5,7 @@ import org.bukkit.Location;
 import java.util.List;
 
 public record RespawnData(
+        String id,
         String timestamp,
         String name,
         String savedBy,
