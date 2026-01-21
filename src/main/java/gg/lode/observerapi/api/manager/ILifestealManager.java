@@ -11,9 +11,9 @@ public interface ILifestealManager {
 
     String getItemName();
 
-    void setModelData(int modelData);
+    void setItemModel(String itemModel);
 
-    int getModelData();
+    String getItemModel();
 
     void setStackable(boolean stackable);
 

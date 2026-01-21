@@ -6,6 +6,8 @@ import java.util.List;
 
 public record RespawnData(
         String timestamp,
+        String name,
+        String savedBy,
         byte[] contents,
         double health,
         int foodLevel,
