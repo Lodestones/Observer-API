@@ -33,6 +33,8 @@ public interface IObserverAPI {
 
     IHelpOpManager getHelpOpManager();
 
+    IKitManager getKitManager();
+
     /**
      * This method triggers the PreGameStateChangeEvent with the player who triggered it.
      *
