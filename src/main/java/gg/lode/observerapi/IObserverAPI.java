@@ -25,6 +25,8 @@ public interface IObserverAPI {
 
     IPlayerManager getPlayerManager();
 
+    IPresetManager getPresetManager();
+
     IRespawnManager getRespawnManager();
 
     ITranslationManager getTranslationManager();
